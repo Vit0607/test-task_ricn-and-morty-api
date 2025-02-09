@@ -9,6 +9,7 @@ export default defineConfig({
         icon: true
       }
     })],
+    base: "/test-task_ricn-and-morty-api/",
   resolve: {
     alias: {
       assets: '/src/assets',
