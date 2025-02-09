@@ -1,0 +1,87 @@
+@use 'styles/helpers.scss' as helpers;
+
+.loader,
+.error {
+  margin-top: auto;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #f9f9f9;
+  transition: border-color 0.25s;
+  color: #000;
+  margin: 0 auto;
+  margin-bottom: 30px;
+
+  &:hover {
+    border: 1px solid var(--primary-color);
+    transition: border-color 0.25s;
+    color: #000;
+  }
+}
+
+.detailContent {
+  margin-bottom: rem(50);
+  .cardContainer {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .detailInfo {
+    width: 100%;
+    padding: rem(20);
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-base);
+
+    .infoItem {
+      font-size: 1.3rem;
+      border-bottom: 1px dotted #ccc;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media (max-width: helpers.map-get(helpers.$screens, 'tablet')) {
+  .detailContent {
+    .detailInfo {
+      .infoItem {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: helpers.map-get(helpers.$screens, 'mobile')) {
+  .detailContent {
+    .detailInfo {
+      padding: rem(10);
+
+      .infoItem {
+        display: flex;
+        flex-direction: column;
+        border: 1px dotted #ccc;
+
+        .infoLabel {
+          color: #888;
+        }
+      }
+    }
+  }
+}

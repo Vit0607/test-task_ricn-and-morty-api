@@ -1,0 +1,82 @@
+@mixin button-styles {
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  margin-bottom: rem(10);
+
+  &.favorite {
+    background-color: var(--primary-color);
+    color: #ffffff;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.link {
+  position: relative;
+  transition: box-shadow 0.5s ease;
+
+  &:hover {
+    box-shadow: 0rem 0rem rem(11) rem(6) rgba(34, 60, 80, 0.21);
+    transition: box-shadow 0.5s ease;
+  }
+
+  .card {
+    .name {
+      margin-bottom: rem(5);
+      font-size: 1.2rem;
+    }
+
+    button {
+      @include button-styles;
+    }
+  }
+}
+
+.cardWrapper {
+  margin-bottom: rem(20);
+
+  .card {
+    margin: 0 auto;
+    position: relative;
+    padding: 1.5rem;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--size-base);
+      margin-bottom: 1.5rem;
+    }
+
+    .name {
+      font-size: 1.5rem;
+      margin-bottom: var(--size-base);
+      color: var(--primary-color);
+    }
+
+    button {
+      @include button-styles;
+    }
+  }
+
+  .status {
+    position: absolute;
+    top: var(--size-base);
+    right: var(--size-base);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    color: white;
+
+    .alive {
+      color: #00ff00;
+    }
+
+    .dead {
+      color: #ff0000;
+    }
+  }
+}

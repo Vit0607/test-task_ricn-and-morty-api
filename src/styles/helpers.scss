@@ -1,0 +1,23 @@
+@use 'sass:map';
+
+:root {
+  // Colors
+  --primary-color: #646cff;
+
+  // Size settings
+  --size-base: 1rem;
+  --size-large: 1.25rem;
+  --size-small: 0.875rem;
+}
+
+// Screen dimensions
+$screens: (
+  'mobile': 576px,
+  'tablet': 768px,
+  'desktop': 1024px,
+  'large-desktop': 1200px
+);
+
+@function map-get($map, $key) {
+  @return map.get($map, $key); // Возвращает значение по ключу из карты
+}
